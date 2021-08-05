@@ -16,8 +16,9 @@ html.close()
 
 
 title = soup.find('div', {'class':'select_box'}) #영역추출
+main_info = soup.find('div', {'class':'main_info'}) #영역추출
 data1 = soup.find('div', {'class':'detail_box'}) #영역추출
-# pprint(title.text)
+# pprint(main_info)
 
 data2 = data1.findAll('dd')
 # pprint(data2)
@@ -25,4 +26,6 @@ data2 = data1.findAll('dd')
 find_title = title.find('em').text
 find_dust = data2[0].find('span', {'class':'num'}).text
 print(find_title)
+# strip() 함수는 왼쪽 lstrip(), 오른쪽 rstrip() 공백을 제거 해 줍니다. 
+print(main_info.text.strip())
 print("미세먼지 : ", find_dust)
