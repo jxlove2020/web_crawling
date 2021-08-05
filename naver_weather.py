@@ -8,6 +8,10 @@ html = requests.get('https://search.naver.com/search.naver?query=경기도 용�
 # pprint(html.text)
 
 soup = bs(html.text, 'html.parser')
+
+# urlopen을 진행한 후에는 close를 한다
+html.close()
+
 # pprint(soup)
 
 
