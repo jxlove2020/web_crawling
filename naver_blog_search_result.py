@@ -16,10 +16,12 @@ soup = BeautifulSoup(html, 'html.parser')
 # print(soup)
 
 total_area = soup.find_all(class_='total_area')
+# print(total_area)
 
 # 네이버 VIEW 탭의 검색 결과 출력
 for i in total_area: 
-  a = i.find('a', {'class': 'api_txt_lines total_tit'})
+  # print(i)
+  a = i.find('a', {'class': 'api_txt_lines'})
   link = a.attrs['href']
 
   print()
